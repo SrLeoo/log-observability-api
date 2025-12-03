@@ -3,12 +3,15 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
+const start = performance.now();
 const PORT = process.env.PORT;
 
 // Health check
 app.get("/", (req, res) => {
     res.send("Logs Service Online");
 });
+
+const end = performance.now();
 
 // Endpoint que recebe os logs
 app.post("/logs", (req, res) => {
@@ -18,7 +21,8 @@ app.post("/logs", (req, res) => {
     res.status(200).json({
         status: "OK",
         message: "Log recebido com sucesso",
-        received_at: new Date().toISOString()
+        received_at: new Date().toISOString(),
+        time_response_ms: `${(end - start).toFixed(2)}`
     });
 });
 
