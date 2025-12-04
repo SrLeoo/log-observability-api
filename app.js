@@ -15,7 +15,7 @@ app.post("/logs", (req, res) => {
     console.log("Novo log recebido:");
     console.log(req.body);
 
-    res.status(200).json({
+    res.status(205).json({
         status: "OK",
         message: "Log recebido com sucesso",
         received_at: new Date().toISOString(),
@@ -26,5 +26,4 @@ app.post("/logs", (req, res) => {
 // Inicializar o servidor
 app.listen(PORT, () => {
     console.log(`Logs Service rodando na porta ${PORT}`);
-    console.log(`Teste de env interno ${VARSQUARE}`);
 });
