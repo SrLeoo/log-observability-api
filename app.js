@@ -5,6 +5,7 @@ app.use(express.json());
 
 const start = performance.now();
 const PORT = process.env.PORT;
+const VARSQUARE = process.env.VARSQUARE
 
 // Health check
 app.get("/", (req, res) => {
@@ -29,4 +30,5 @@ app.post("/logs", (req, res) => {
 // Inicializar o servidor
 app.listen(PORT, () => {
     console.log(`Logs Service rodando na porta ${PORT}`);
+    console.log(`Teste de env interno ${VARSQUARE}`)
 });
