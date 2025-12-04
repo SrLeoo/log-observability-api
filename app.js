@@ -15,7 +15,7 @@ app.post("/logs", (req, res) => {
     console.log("Novo log recebido:");
     console.log(req.body);
 
-    res.status(205).json({
+    res.status(200).json({
         status: "OK",
         message: "Log recebido com sucesso",
         received_at: new Date().toISOString(),
