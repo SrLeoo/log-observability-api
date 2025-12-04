@@ -8,10 +8,6 @@ const PORT = process.env.PORT;
 const VARSQUARE = process.env.VARSQUARE;
 
 // Health check
-app.get("/", (req, res) => {
-    res.send("Logs Service Online");
-});
-
 const end = performance.now();
 
 // Endpoint que recebe os logs
